@@ -36,3 +36,13 @@ jobs:
       - name: List built files
         run: |
           ls ./build/libs
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+#          token: ${{ secrets.GH_OWNER_TOKEN }}
+          tag_name: ${{env.fullSemVer}}
+          prerelease: false
+          draft: false
+          files: ./build/libs/*
+          generate_release_notes: false
