@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'pk.demo.actions'
-version = '0.0.1-SNAPSHOT'
+version project.hasProperty('version') ? version : '0.0.0'
 
 java {
 	toolchain {
