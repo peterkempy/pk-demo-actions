@@ -36,13 +36,22 @@ jobs:
       - name: List built files
         run: |
           ls ./build/libs
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
+      - name: Create tag
+        uses: actions/github-script@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag_name: ${{env.fullSemVer}}
-          prerelease: false
-          draft: false
-          files: ./build/libs/*
-          generate_release_notes: false
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "refs/tags/${{env.fullSemVer}}",
+              sha: context.sha
+            })
+#      - name: Create Release
+#        uses: softprops/action-gh-release@v2
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          tag_name: ${{env.fullSemVer}}
+#          prerelease: false
+#          draft: false
+#          files: ./build/libs/*
+#          generate_release_notes: false
