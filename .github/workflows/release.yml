@@ -1,5 +1,5 @@
-name: pk demo actions
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: pk demo release
+run-name: ${{ github.actor }} is releasing using GitHub Actions
 on:
   push:
     branches:
@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-#        with:
-#          fetch-depth: 0
+        with:
+          fetch-depth: 0
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v1.1.1
         with:
