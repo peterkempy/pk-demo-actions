@@ -8,9 +8,10 @@ group = 'pk.demo.actions'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '17'
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
 }
-
 repositories {
 	mavenCentral()
 }

@@ -16,7 +16,9 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "The workflow is now ready to test your code on the runner."
+      - run: git status
+      - run: git branch
+      - run: pwd
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
