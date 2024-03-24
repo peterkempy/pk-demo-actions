@@ -1,0 +1,5 @@
+spring:
+  application:
+  name: pk-demo-actions
+  webflux:
+    base-path: /pk

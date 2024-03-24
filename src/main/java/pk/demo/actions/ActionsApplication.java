@@ -1,4 +1,4 @@
-package pk.demo.actions.actions;
+package pk.demo.actions;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
